@@ -69,7 +69,7 @@ discordClient.on("messageCreate", async (message) => {
             const xpRequired = newLevel * 100 * xpRatio;
             if(newXP >= xpRequired) {
                 newLevel++;
-                message.channel.send(`<@${userId} has leveled up to **Level ${newLevel}!**`);
+                message.channel.send(`<@${userId}> has leveled up to **Level ${newLevel}!**`);
             }
 
             await usersCollection.updateOne({ userId: userId, username: username }, { $set: { level: newLevel, xp: newXP }});
